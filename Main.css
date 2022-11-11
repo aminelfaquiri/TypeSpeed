@@ -1,0 +1,173 @@
+:root{
+    --main-color : #ff9800;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+font-family: 'Open Sans', sans-serif;}
+
+.game{
+    background-color: #EEE;
+        min-height: 100vh;
+}
+.game .name{
+    background-color: var(--main-color);
+        text-align: center;
+        padding: 20px;
+        font-weight: bold;
+        color: white;
+        font-size: 18px;
+}
+
+.game .chosing {
+    width: 700px;
+    text-align: center;
+    display: flex;
+    margin: 10px auto;
+    padding: 5px;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.game .chosing h3{
+
+}
+.game .chosing span {
+    background-color:var(--main-color);
+    margin: 10px;
+    padding: 5px;
+    color: white;
+    border-radius: 6px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.game .chosing span:hover{
+    background-color: #ff9900b9;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    display: none;
+}
+
+.container .message{
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.container .message span{
+    font-weight: bold;
+}
+
+.container a{
+    display: block;
+    background-color: red;
+    text-align: center;
+    margin: 9px 0px;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.container .the-word{
+    text-align: center;
+    font-size: 35px;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.container .input{    
+    width: 100%;
+    height: 40px;
+    border: none;
+    caret-color: red;
+    text-transform: capitalize;
+    padding-left: 20px;
+    text-align: center;
+}
+
+.container .input:focus{
+    outline: none;
+}
+
+
+.container .upcoming-words{
+    background-color: white;
+    margin: 15px 0px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container .upcoming-words span{
+    background-color: var(--main-color);
+    padding: 5px;
+    margin: 0px 5px;
+}
+
+.container .control{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+}
+
+.container .control .time{}
+
+.container .control .time span{
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.container .control .score{}
+
+.container .control .score span{
+    color: black;
+    font-weight: bold;
+}
+
+.container .finish{
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0px;
+    display: none;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    transition: 0.3s;
+}
+
+.container .finish span{
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.container .finish .bad{
+    color: red;
+}
+
+.container .finish .good{
+    color: green;
+}
+
+.container .finish .playAgain{
+    border: none;
+    padding: 10px 30px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ff9800;
+    font-size: 17px;
+}
+

@@ -1,0 +1,73 @@
+let levelName = "Easy" ;
+let seconds = lvls[levelName];
+let scorTotal = words.length ;
+let counter = 0 ;
+let result = 0 ;
+
+// add Level to page :
+levelElem.appendChild(document.createTextNode(levelName));
+SecondsElem.appendChild(document.createTextNode(seconds));
+
+// start :
+start.onclick = ()=>{
+  input.focus();
+
+  ShowWord()
+
+  let mission = setInterval(()=>{
+    if(words.length == 0 ){
+      clearInterval(mission);
+      console.log(result);
+    }
+    else{
+      ShowWord();
+    }
+
+  },seconds * 1000)
+}
+
+// countDown :
+function countDown(word){
+  let newSec = seconds ;
+  time.innerHTML = `0${newSec}`;
+  let coutDown =  setInterval(()=>{
+     time.innerHTML = `0${newSec}`;
+     newSec-- ;
+
+     if(time.innerHTML == 0) {
+       clearInterval(coutDown);
+       checkInpute(word)
+     }
+
+   },1000 )
+}
+
+function checkInpute(word){  
+  if(input.value){
+    if(input.value.toLowerCase()  === word.toLowerCase() ){
+      result++;
+    }
+  }
+
+}
+
+function upcomingWord(wordArry){
+
+  upcomingWordsElm.innerHTML = "";
+  for(let index in wordArry){
+    let span = document.createElement('span');
+    span.appendChild(document.createTextNode(wordArry[index]));
+    upcomingWordsElm.appendChild(span);
+
+  }
+
+}
+
+
+function ShowWord(){
+  input.value = "";
+  myWordEl.innerHTML = words[0];
+  countDown(words[0]);
+  words.shift();
+  upcomingWord(words)
+}
